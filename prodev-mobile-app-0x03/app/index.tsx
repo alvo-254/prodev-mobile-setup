@@ -1,56 +1,55 @@
-import { 
-  ImageBackground, 
-  Dimensions, 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  Image 
-} from "react-native";
-import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import styles from "../styles";
 
 export default function Index() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        {/* Background Image */}
-        <ImageBackground
-          source={require("../assets/images/background-image.png")}
-          style={styles.background}
-          resizeMode="cover"
-        >
-          <View style={styles.container}>
-            {/* Company Logo */}
-            <View style={styles.companyLogo}>
-              <Image source={require("../assets/images/logo.png")} />
-            </View>
+    <View style={styles.container}>
+      {/* Title */}
+      <Text style={styles.largeText}>Welcome Back!</Text>
+      <Text style={styles.placeholderText}>
+        Enter your email and password to sign in.
+      </Text>
 
-            {/* Text Section */}
-            <View style={styles.textGroup}>
-              <Text style={styles.textLarge}>Find your favorite place here</Text>
-              <Text style={styles.textSmall}>The best prices for over 2</Text>
-              <Text style={styles.textSmall}>million properties worldwide</Text>
-            </View>
+      {/* Email Input */}
+      <View style={styles.formGroup}>
+        <TextInput
+          placeholder="Email"
+          style={styles.inputField}
+          keyboardType="email-address"
+        />
+      </View>
 
-            {/* Button + Navigation Prompt */}
-            <View style={styles.bottomSection}>
-              <View style={styles.buttonGroup}>
-                <TouchableOpacity style={styles.button}>
-                  <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
-                </TouchableOpacity>
+      {/* Password Input */}
+      <View style={styles.passwordGroup}>
+        <TextInput
+          placeholder="Password"
+          style={styles.inputField}
+          secureTextEntry
+        />
+      </View>
 
-                <TouchableOpacity style={styles.transparentButton}>
-                  <Text style={styles.textSmall}>Sign In</Text>
-                </TouchableOpacity>
-              </View>
+      {/* Forgot Password */}
+      <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
 
-              <View style={styles.navPrompt}>
-                <Text style={{ color: "white" }}>Continue to home</Text>
-              </View>
-            </View>
-          </View>
-        </ImageBackground>
-      </SafeAreaView>
-    </SafeAreaProvider>
+      {/* Login Button */}
+      <TouchableOpacity style={[styles.socialMediaButton, { backgroundColor: "#4A90E2" }]}>
+        <Ionicons name="log-in-outline" size={20} color="white" />
+        <Text style={[styles.socialMediaText, { color: "white" }]}>Sign In</Text>
+      </TouchableOpacity>
+
+      {/* Social Login */}
+      <View style={styles.navGroup}>
+        <TouchableOpacity style={styles.socialMediaButton}>
+          <Image source={require("../assets/images/google.png")} style={{ width: 20, height: 20 }} />
+          <Text style={styles.socialMediaText}>Continue with Google</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.socialMediaButton}>
+          <Image source={require("../assets/images/facebook.png")} style={{ width: 20, height: 20 }} />
+          <Text style={styles.socialMediaText}>Continue with Facebook</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
