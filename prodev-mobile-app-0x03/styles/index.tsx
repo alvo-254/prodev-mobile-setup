@@ -1,67 +1,60 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
-  background: {
+  container: {
     flex: 1,
     justifyContent: "center",
-    width: "100%",
-    height: Dimensions.get("window").height,
-  },
-  companyLogo: {
-    width: "100%",
-    alignItems: "center",
-    padding: 20,
-    marginBottom: 50,
-  },
-  textGroup: { alignItems: "center" },
-  textLarge: {
-    color: "white",
-    fontWeight: "800",
-    fontSize: 40,
-    textAlign: "center",
-    marginBottom: 12,
-  },
-  textSmall: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "200",
-    textAlign: "center",
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    gap: 20,
     paddingHorizontal: 20,
-  },
-  button: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    fontSize: 20,
     backgroundColor: "white",
-    flex: 1,
   },
-  transparentButton: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
+  largeText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  placeholderText: {
+    fontSize: 14,
+    color: "gray",
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  formGroup: {
+    marginBottom: 15,
+  },
+  inputField: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 10,
+  },
+  passwordGroup: {
+    marginBottom: 10,
+  },
+  forgotPasswordText: {
+    color: "blue",
+    textAlign: "right",
+    marginBottom: 20,
+  },
+  navGroup: {
+    marginTop: 20,
     alignItems: "center",
-    fontSize: 20,
-    flex: 1,
   },
-  bottomSection: {
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-  },
-  navPrompt: {
+  socialMediaButton: {
+    flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 20,
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 10,
+    backgroundColor: "white",
+  },
+  socialMediaText: {
+    marginLeft: 10,
+    fontSize: 16,
   },
 });
 
